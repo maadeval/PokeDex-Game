@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "pokemon-solid";
+    src: url("/assets/fonts/Pokemon-Solid.ttf");
+}
+
+body {
+    background-color: var(--darkGrey);
+    font-family: "pokemon-solid", sans-serif;
+    letter-spacing: .25rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 400px 1fr;
+
+    & .header {
+        grid-column: 1 / -1;
+    }
+    & .poke-select {
+        grid-column: 1/2;
+    }
+    &pokedex-list {
+        grid-column: 2/3;
+    }
+}

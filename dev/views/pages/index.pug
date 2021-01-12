@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Pokedex - Juego
+        link(rel="stylesheet", href="css/styles.css")
+    body
+        header.header
+            h1.header__title Pokedex
+            .header__info-box
+                .header__poke-count 
+                    span#numberPoke
+                    span /151
+
+        section.poke-select
+            #loader.loader
+                h2.loader__text Loading...
+                .loader__item
+            img#image-pokemon.poke-select__image(src="")
+            ul#answer-options.poke-select__options
+
+        section#pokedex-list.pokedex-list
+           
+        script(src="js/scripts-min.js")
+    

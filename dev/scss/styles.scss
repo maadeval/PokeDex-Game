@@ -1,0 +1,17 @@
+// base
+@import "base/normalize.scss";
+@import "base/base.scss";
+@import "base/scroll.scss";
+
+//config
+@import "config/variables.scss";
+
+
+//blocks
+@import "blocks/header.scss";
+@import "blocks/poke-select.scss";
+@import "blocks/loader.scss";
+@import "blocks/pokedex-list.scss";
+
+//helpers
+@import "helpers/helpers";

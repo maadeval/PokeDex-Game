@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pokedex - Juego</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Pokedex</h1>
+      <div class="header__info-box">
+        <div class="header__poke-count"> <span id="numberPoke"></span><span>/151</span></div>
+      </div>
+    </header>
+    <section class="poke-select">
+      <div class="loader" id="loader">
+        <h2 class="loader__text">Loading...</h2>
+        <div class="loader__item"></div>
+      </div><img class="poke-select__image" id="image-pokemon" src=""/>
+      <ul class="poke-select__options" id="answer-options"></ul>
+    </section>
+    <section class="pokedex-list" id="pokedex-list"></section>
+    <script src="js/scripts-min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.header {
+    background-color: var(--blue);
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    &__title {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        top: -.5rem;
+
+        color: var(--yellow);
+        -webkit-text-stroke: 1px var(--blue);
+        text-shadow: -3px 3px 5px black;
+    }
+
+    &__info-box {
+        position: absolute;
+        display: block;
+        right: 2rem;
+    }
+
+    & .header__info-box {
+        justify-self: flex-end;
+    }
+}

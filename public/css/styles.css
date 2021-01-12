@@ -1,0 +1,184 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document ========================================================================== */
+/** 1. Correct the line height in all browsers. 2. Prevent adjustments of font size after orientation changes in iOS. */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { line-height: 1.15; /* 1 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+
+img { max-width: 100%; }
+
+/* Sections ========================================================================== */
+/** Remove the margin in all browsers. */
+body { margin: 0; }
+
+/** Render the `main` element consistently in IE. */
+main { display: block; }
+
+/** Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari. */
+h1 { font-size: 2em; margin: 0 0; }
+
+/* Grouping content ========================================================================== */
+/** 1. Add the correct box sizing in Firefox. 2. Show the overflow in Edge and IE. */
+hr { box-sizing: content-box; /* 1 */ height: 0; /* 1 */ overflow: visible; /* 2 */ }
+
+/** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */
+pre { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
+
+/* Text-level semantics ========================================================================== */
+/** Remove the gray background on active links in IE 10. */
+a { background-color: transparent; }
+
+/** 1. Remove the bottom border in Chrome 57- 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+abbr[title] { border-bottom: none; /* 1 */ text-decoration: underline; /* 2 */ -webkit-text-decoration: underline dotted; text-decoration: underline dotted; /* 2 */ }
+
+/** Add the correct font weight in Chrome, Edge, and Safari. */
+b, strong { font-weight: bolder; }
+
+/** 1. Correct the inheritance and scaling of font size in all browsers. 2. Correct the odd `em` font sizing in all browsers. */
+code, kbd, samp { font-family: monospace, monospace; /* 1 */ font-size: 1em; /* 2 */ }
+
+/** Add the correct font size in all browsers. */
+small { font-size: 80%; }
+
+/** Prevent `sub` and `sup` elements from affecting the line height in all browsers. */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sub { bottom: -0.25em; }
+
+sup { top: -0.5em; }
+
+/* Embedded content ========================================================================== */
+/** Remove the border on images inside links in IE 10. */
+img { border-style: none; }
+
+/* Forms ========================================================================== */
+/** 1. Change the font styles in all browsers. 2. Remove the margin in Firefox and Safari. */
+button, input, optgroup, select, textarea { font-family: inherit; /* 1 */ font-size: 100%; /* 1 */ line-height: 1.15; /* 1 */ margin: 0; /* 2 */ }
+
+/** Show the overflow in IE. 1. Show the overflow in Edge. */
+button, input { /* 1 */ overflow: visible; }
+
+/** Remove the inheritance of text transform in Edge, Firefox, and IE. 1. Remove the inheritance of text transform in Firefox. */
+button, select { /* 1 */ text-transform: none; }
+
+/** Correct the inability to style clickable types in iOS and Safari. */
+button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
+
+/** Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { border-style: none; padding: 0; }
+
+/** Restore the focus styles unset by the previous rule. */
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
+
+/** Correct the padding in Firefox. */
+fieldset { padding: 0.35em 0.75em 0.625em; }
+
+/** 1. Correct the text wrapping in Edge and IE. 2. Correct the color inheritance from `fieldset` elements in IE. 3. Remove the padding so developers are not caught out when they zero out `fieldset` elements in all browsers. */
+legend { box-sizing: border-box; /* 1 */ color: inherit; /* 2 */ display: table; /* 1 */ max-width: 100%; /* 1 */ padding: 0; /* 3 */ white-space: normal; /* 1 */ }
+
+/** Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+progress { vertical-align: baseline; }
+
+/** Remove the default vertical scrollbar in IE 10+. */
+textarea { overflow: auto; }
+
+/** 1. Add the correct box sizing in IE 10. 2. Remove the padding in IE 10. */
+[type="checkbox"], [type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
+
+/** Correct the cursor style of increment and decrement buttons in Chrome. */
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button { height: auto; }
+
+/** 1. Correct the odd appearance in Chrome and Safari. 2. Correct the outline style in Safari. */
+[type="search"] { -webkit-appearance: textfield; /* 1 */ outline-offset: -2px; /* 2 */ }
+
+/** Remove the inner padding in Chrome and Safari on macOS. */
+[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/** 1. Correct the inability to style clickable types in iOS and Safari. 2. Change font properties to `inherit` in Safari. */
+::-webkit-file-upload-button { -webkit-appearance: button; /* 1 */ font: inherit; /* 2 */ }
+
+/* Interactive ========================================================================== */
+/* Add the correct display in Edge, IE 10+, and Firefox. */
+details { display: block; }
+
+/* Add the correct display in all browsers. */
+summary { display: list-item; }
+
+/* Misc ========================================================================== */
+/** Add the correct display in IE 10+. */
+template { display: none; }
+
+/** Add the correct display in IE 10. */
+[hidden] { display: none; }
+
+@font-face { font-family: "pokemon-solid"; src: url("/assets/fonts/Pokemon-Solid.ttf"); }
+
+body { background-color: var(--darkGrey); font-family: "pokemon-solid", sans-serif; letter-spacing: .25rem; overflow: hidden; display: grid; grid-template-rows: auto 1fr; grid-template-columns: 400px 1fr; }
+
+body .header { grid-column: 1 / -1; }
+
+body .poke-select { grid-column: 1/2; }
+
+bodypokedex-list { grid-column: 2/3; }
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { background-color: var(--blue); }
+
+::-webkit-scrollbar-thumb { border-radius: 15px; background-color: var(--yellow); }
+
+:root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; }
+
+.header { background-color: var(--blue); width: 100vw; height: 60px; display: flex; align-items: center; }
+
+.header__title { margin-left: auto; margin-right: auto; position: relative; top: -.5rem; color: var(--yellow); -webkit-text-stroke: 1px var(--blue); text-shadow: -3px 3px 5px black; }
+
+.header__info-box { position: absolute; display: block; right: 2rem; }
+
+.header .header__info-box { justify-self: flex-end; }
+
+.poke-select { height: 100vh; position: relative; }
+
+.poke-select::before, .poke-select::after { content: ""; display: block; position: absolute; width: 100%; height: 100%; }
+
+.poke-select::before { background-color: var(--white); top: 0; z-index: -2; }
+
+.poke-select::after { background-color: var(--blue); bottom: -280px; z-index: -1; }
+
+.poke-select__image { display: block; margin-left: auto; margin-right: auto; width: 60%; margin-top: 100px; -webkit-filter: drop-shadow(2px 4px 6px black) brightness(0); filter: drop-shadow(2px 4px 6px black) brightness(0); }
+
+.poke-select__options { font-size: 24px; list-style: none; padding-left: 0; text-align: center; line-height: 4rem; margin-top: 4rem; }
+
+.poke-select__options li:hover { cursor: pointer; transform: scale(1.1); color: var(--white); -webkit-text-stroke: 2px var(--yellow); text-shadow: -3px 3px 5px black; }
+
+.poke-select__options li:active { transform: rotate(2deg); }
+
+.show { transition: -webkit-filter .5s linear; transition: filter .5s linear; transition: filter .5s linear, -webkit-filter .5s linear; -webkit-filter: drop-shadow(2px 4px 6px black) brightness(1); filter: drop-shadow(2px 4px 6px black) brightness(1); }
+
+.loader { margin-left: auto; margin-right: auto; position: relative; top: 226px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+.loader__item { width: 25px; height: 25px; border-radius: 50%; border: 2px solid black; background: linear-gradient(var(--red) 47%, black 47%, black 53%, var(--white) 53%); position: relative; -webkit-animation: loop 2s infinite alternate; animation: loop 2s infinite alternate; }
+
+.loader__item::before { content: ''; display: block; width: 10px; height: 10px; position: absolute; background-color: var(--white); border-radius: 50%; border: 2px solid black; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+@-webkit-keyframes loop { to { transform: rotate(1.5turn); } }
+
+@keyframes loop { to { transform: rotate(1.5turn); } }
+
+.loader__text { letter-spacing: .25rem; color: var(--yellow); -webkit-text-stroke: 1px var(--blue); top: -9px; position: relative; margin-left: 1rem; position: relative; }
+
+.loader__text::before { content: ''; width: 50%; height: 15px; background-color: var(--white); position: absolute; right: -40px; bottom: -7px; -webkit-animation: loader 2s steps(4) infinite; animation: loader 2s steps(4) infinite; }
+
+@-webkit-keyframes loader { to { transform: translateX(35px); } }
+
+@keyframes loader { to { transform: translateX(35px); } }
+
+.pokedex-list { width: 100%; height: 100vh; padding: 2rem; gap: 2rem 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 250px)); grid-template-rows: repeat(auto-fill, minmax(350px, 350px)); justify-content: center; overflow: scroll; }
+
+.pokedex-list .poke-card { width: 100%; height: 350px; border-radius: 0 15px 0 15px; background-color: var(--blue); -webkit-filter: brightness(0.8); filter: brightness(0.8); position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid var(--yellow); }
+
+.pokedex-list .poke-card__back { display: flex; position: relative; width: 225px; height: 225px; border-radius: 50%; -webkit-filter: brightness(0.5); filter: brightness(0.5); border: 0.75rem solid var(--blue); background: linear-gradient(transparent 47%, var(--blue) 47%, var(--blue) 53%, transparent 53%); margin: auto; justify-content: center; align-items: center; }
+
+.pokedex-list .poke-card__back::before { content: ''; display: block; width: 40px; height: 40px; border-radius: 50%; background-color: var(--blue); }
+
+.hiden { display: none; }
