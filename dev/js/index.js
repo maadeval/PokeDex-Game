@@ -65,6 +65,7 @@ const printPokedex = () => {
     allPokemons.forEach((pokemon, id) => {
         const pokeCard = document.createElement('DIV')
         pokeCard.classList.add('poke-card')
+        pokeCard.dataset.pokeId = id + 1
         const pokeCardBack = document.createElement('DIV')
         pokeCardBack.classList.add('poke-card__back')
         const pokeCardFront = document.createElement('DIV')
@@ -128,11 +129,25 @@ const printAnswer = () => {
    
 }
 
+const goToPokemonCatched = (currentAnswer) => {
+    const searchPokemon = allPokemons.find(({name}) => currentAnswer === name)
+    const searchPokemonId = searchPokemon.id
+
+    //DOM
+    const pokeTargets = [...document.querySelectorAll(".poke-card")]
+    const pokeTarget = pokeTargets[searchPokemonId - 1]
+    pokeList.scrollTo({
+        top: pokeTarget.offsetTop - 100,
+        behavior: 'smooth'
+    })
+}
+
 getAllPokemons()
 
     answerOptions.addEventListener('click', e => e.target.textContent === currentAnswer 
         ?   (
             imagePokemon.classList.add('show'),
+            goToPokemonCatched(currentAnswer),
             setTimeout(() => {
                 imagePokemon.classList.remove('show')
                 getAnswers()
