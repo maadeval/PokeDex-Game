@@ -7,13 +7,14 @@ html(lang="en")
         link(rel="stylesheet", href="css/styles.css")
     body
         header.header
+            button.header__options Opciones
             h1.header__title Pokedex
             .header__info-box
                 .header__poke-count 
                     span#numberPoke
                     span /151
 
-        section.poke-select
+        section.poke-select#poke-select
             #loader.loader
                 h2.loader__text Loading...
                 .loader__item
@@ -21,6 +22,41 @@ html(lang="en")
             ul#answer-options.poke-select__options
 
         section#pokedex-list.pokedex-list
+        .game-completed#game-completed-modal
+            .game-completed__modal
+                .game-completed__pokeball
+                .game-completed__title Felicitaciones!
+                .game-completed__text Has atrapado los 151 pokemons!
+                .game-completed__sub-text Quieres reiniciar el jugar?
+                .game-completed__buttons
+                    button.game-completed__btn-cancel#game-completed-btn-cancel Cancelar
+                    button.game-completed__btn-newgame#game-completed-btn-newgame Volver a jugar
+        .menu-options#menu-options
+            .menu-options__modal
+                .menu-options__tabs
+                    input#input-desafios(type="radio" name="radio-input-tabs").menu-options__input-tabs
+                    label(for="input-desafios").menu-options__tab Desafios
+                    input#input-opciones(type="radio" name="radio-input-tabs").menu-options__input-tabs
+                    label(for="input-opciones").menu-options__tab Opciones
+                .menu-options__description-tabs
+                    .menu-options__description
+                        p Puedes elegir de de que forma jugar
+                        ul.menu-options__description
+                            li 
+                                input.menu-options__radio#juego-libre(type="radio" name="type-game")
+                                label(for="juego-libre") Juego libre
+                            li 
+                                input.menu-options__radio#3-vidas(type="radio" name="type-game")
+                                label(for="3-vidas") Empezar con 3 vidas
+                            li
+                                input.menu-options__radio#5-vidas(type="radio" name="type-game")
+                                label(for="5-vidas") Empezar con 5 vidas
+                            li
+                                input.menu-options__radio#10-vidas(type="radio" name="type-game")
+                                label(for="10-vidas") Empezar con 10 vidas
+                        p.menu-options__subtext Si haces algun cambio, el juego se reiniciara
+                    .menu-options__description
+
            
         script(src="js/scripts-min.js")
     

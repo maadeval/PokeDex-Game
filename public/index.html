@@ -8,12 +8,13 @@
   </head>
   <body>
     <header class="header">
+      <button class="header__options">Opciones</button>
       <h1 class="header__title">Pokedex</h1>
       <div class="header__info-box">
         <div class="header__poke-count"> <span id="numberPoke"></span><span>/151</span></div>
       </div>
     </header>
-    <section class="poke-select">
+    <section class="poke-select" id="poke-select">
       <div class="loader" id="loader">
         <h2 class="loader__text">Loading...</h2>
         <div class="loader__item"></div>
@@ -21,6 +22,53 @@
       <ul class="poke-select__options" id="answer-options"></ul>
     </section>
     <section class="pokedex-list" id="pokedex-list"></section>
+    <div class="game-completed" id="game-completed-modal">
+      <div class="game-completed__modal">
+        <div class="game-completed__pokeball"></div>
+        <div class="game-completed__title">Felicitaciones!</div>
+        <div class="game-completed__text">Has atrapado los 151 pokemons!</div>
+        <div class="game-completed__sub-text">Quieres reiniciar el jugar?</div>
+        <div class="game-completed__buttons">
+          <button class="game-completed__btn-cancel" id="game-completed-btn-cancel">Cancelar</button>
+          <button class="game-completed__btn-newgame" id="game-completed-btn-newgame">Volver a jugar</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-options" id="menu-options">
+      <div class="menu-options__modal">
+        <div class="menu-options__tabs">
+          <input class="menu-options__input-tabs" id="input-desafios" type="radio" name="radio-input-tabs"/>
+          <label class="menu-options__tab" for="input-desafios">Desafios</label>
+          <input class="menu-options__input-tabs" id="input-opciones" type="radio" name="radio-input-tabs"/>
+          <label class="menu-options__tab" for="input-opciones">Opciones</label>
+        </div>
+        <div class="menu-options__description-tabs">
+          <div class="menu-options__description">
+            <p>Puedes elegir de de que forma jugar</p>
+            <ul class="menu-options__description">
+              <li> 
+                <input class="menu-options__radio" id="juego-libre" type="radio" name="type-game"/>
+                <label for="juego-libre">Juego libre</label>
+              </li>
+              <li> 
+                <input class="menu-options__radio" id="3-vidas" type="radio" name="type-game"/>
+                <label for="3-vidas">Empezar con 3 vidas</label>
+              </li>
+              <li>
+                <input class="menu-options__radio" id="5-vidas" type="radio" name="type-game"/>
+                <label for="5-vidas">Empezar con 5 vidas</label>
+              </li>
+              <li>
+                <input class="menu-options__radio" id="10-vidas" type="radio" name="type-game"/>
+                <label for="10-vidas">Empezar con 10 vidas</label>
+              </li>
+            </ul>
+            <p class="menu-options__subtext">Si haces algun cambio, el juego se reiniciara</p>
+          </div>
+          <div class="menu-options__description"></div>
+        </div>
+      </div>
+    </div>
     <script src="js/scripts-min.js"></script>
   </body>
 </html>

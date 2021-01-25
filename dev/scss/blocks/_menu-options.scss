@@ -1,0 +1,95 @@
+.menu-options {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(rgba(0, 0, 0, 0.5), black);
+    display: none;
+    place-items: center;
+
+    &__modal {
+        width: 600px;
+        height: auto;
+        background: var(--white);
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__tabs {
+        width: 100%;
+        display: flex;
+        margin-top: 1rem;
+        border-bottom: 1px solid lightgray;
+    }
+
+    &__tab {
+        text-align: center;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 50%;
+        cursor: pointer;
+    }
+    
+    &__input-tabs {
+        display: none;
+        
+        &:checked + .menu-options__tab {
+            border-bottom: 2px solid var(--red);
+        }
+    }
+
+    &__description-tabs {
+        padding: 1rem;
+    }
+
+    &__description {
+        list-style: none;
+
+        & li {
+            margin: 1.5rem 0;
+        }
+    }
+
+    &__radio {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 1px solid lightgray;
+            background-color: white;
+            position: absolute;
+        }
+
+        &:checked::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 10px;
+            border-left: 5px solid var(--red);
+            border-bottom: 5px solid var(--red);
+            border-bottom: 5px solid var(--red);
+            transform: rotate(-45deg);
+            left: 2px;
+            bottom: 5px;
+        } 
+    }
+
+    &__subtext {
+        font-size: 12px;
+        color: gray;
+        text-align: center;
+    }
+}
