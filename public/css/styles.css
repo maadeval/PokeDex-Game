@@ -225,6 +225,12 @@ bodypokedex-list { grid-column: 2/3; }
 
 .menu-options { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); display: none; place-items: center; }
 
+.menu-options--show { display: grid; }
+
+.menu-options__description-block { display: contents; position: absolute; left: 0; top: 0; }
+
+.menu-options__description-block--hidden { display: none; }
+
 .menu-options__modal { width: 600px; height: auto; background: var(--white); border-radius: 15px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
 
 .menu-options__tabs { width: 100%; display: flex; margin-top: 1rem; border-bottom: 1px solid lightgray; }
@@ -235,7 +241,7 @@ bodypokedex-list { grid-column: 2/3; }
 
 .menu-options__input-tabs:checked + .menu-options__tab { border-bottom: 2px solid var(--red); }
 
-.menu-options__description-tabs { padding: 1rem; }
+.menu-options__description-tabs { padding: 1rem; position: relative; }
 
 .menu-options__description { list-style: none; }
 
@@ -248,5 +254,15 @@ bodypokedex-list { grid-column: 2/3; }
 .menu-options__radio:checked::after { content: ''; display: block; position: absolute; width: 15px; height: 10px; border-left: 5px solid var(--red); border-bottom: 5px solid var(--red); border-bottom: 5px solid var(--red); transform: rotate(-45deg); left: 2px; bottom: 5px; }
 
 .menu-options__subtext { font-size: 12px; color: gray; text-align: center; }
+
+.menu-options__buttons { display: flex; justify-content: space-evenly; margin-top: 2rem; }
+
+.menu-options__btn-cancel, .menu-options__btn-acept { padding: .5rem 2rem; padding-bottom: 11px; outline: none; border: 1px solid black; cursor: pointer; }
+
+.menu-options__btn-cancel:hover, .menu-options__btn-acept:hover { color: var(--white); }
+
+.menu-options__btn-cancel { background-color: var(--red); }
+
+.menu-options__btn-acept { background-color: var(--blue); }
 
 .hiden { display: none; }

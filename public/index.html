@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-      <button class="header__options">Opciones</button>
+      <button class="header__options" id="header__options">Opciones</button>
       <h1 class="header__title">Pokedex</h1>
       <div class="header__info-box">
         <div class="header__poke-count"> <span id="numberPoke"></span><span>/151</span></div>
@@ -43,7 +43,7 @@
           <label class="menu-options__tab" for="input-opciones">Opciones</label>
         </div>
         <div class="menu-options__description-tabs">
-          <div class="menu-options__description">
+          <div class="menu-options__description-block">
             <p>Puedes elegir de de que forma jugar</p>
             <ul class="menu-options__description">
               <li> 
@@ -64,8 +64,18 @@
               </li>
             </ul>
             <p class="menu-options__subtext">Si haces algun cambio, el juego se reiniciara</p>
+            <div class="menu-options__buttons">
+              <button class="menu-options__btn-cancel">Cancelar</button>
+              <button class="menu-options__btn-acept">Aceptar</button>
+            </div>
           </div>
-          <div class="menu-options__description"></div>
+          <div class="menu-options__description-block menu-options__description-block--hidden">
+            <p>Puedes reiniciar el juego</p>
+            <div class="menu-options__buttons">
+              <button class="menu-options__btn-cancel">Cancelar</button>
+              <button class="menu-options__btn-acept">Reiniciar</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

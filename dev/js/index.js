@@ -30,7 +30,8 @@ const numPokeCatched = document.getElementById('numberPoke')
 const modalGameCompleted = document.getElementById('game-completed-modal')
 const gameCompletedCancel = document.getElementById('game-completed-btn-cancel')
 const gameCompletedRestart = document.getElementById('game-completed-btn-newgame')
-
+const headerOptions = document.getElementById('header__options')
+const menuOpctions = document.getElementById('menu-options')
 
 /*
     ORDEN DE EJECUCION
@@ -248,6 +249,11 @@ gameCompletedRestart.addEventListener('click', () => {
     localStorage.removeItem('pokedex')
     pokeSelect.textContent = ''
     checkPokedex()
+})
+
+//abre el modal de opciones
+headerOptions.addEventListener('click', () => {
+    menuOpctions.classList.add('menu-options--show')
 })
 
 

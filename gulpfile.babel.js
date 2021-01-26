@@ -63,7 +63,7 @@ gulp.task('default', () => {
   //PUG
   gulp.watch('./dev/views/**/*.pug', gulp.series('pug')).on('change', server.reload)
   //SCSS
-  gulp.watch('./dev/scss/**/*.scss', gulp.series('styles'))
+  gulp.watch('./dev/scss/**/*.scss', gulp.series('styles')).on('change', server.reload)
 
   //JS
   gulp.watch("./dev/js/*.js", gulp.series('babel')).on('change', server.reload)
