@@ -38,12 +38,12 @@
       <div class="menu-options__modal">
         <div class="menu-options__tabs">
           <input class="menu-options__input-tabs" id="input-desafios" type="radio" name="radio-input-tabs"/>
-          <label class="menu-options__tab" for="input-desafios">Desafios</label>
+          <label class="menu-options__tab" for="input-desafios" name="type-option">Desafios</label>
           <input class="menu-options__input-tabs" id="input-opciones" type="radio" name="radio-input-tabs"/>
-          <label class="menu-options__tab" for="input-opciones">Opciones</label>
+          <label class="menu-options__tab" for="input-opciones" name="type-option">Opciones</label>
         </div>
         <div class="menu-options__description-tabs">
-          <div class="menu-options__description-block">
+          <div class="menu-options__description-block" id="description-desarios">
             <p>Puedes elegir de de que forma jugar</p>
             <ul class="menu-options__description">
               <li> 
@@ -65,14 +65,14 @@
             </ul>
             <p class="menu-options__subtext">Si haces algun cambio, el juego se reiniciara</p>
             <div class="menu-options__buttons">
-              <button class="menu-options__btn-cancel">Cancelar</button>
+              <button class="menu-options__btn-cancel" id="btn-cancel-options-step-1">Cancelar </button>
               <button class="menu-options__btn-acept">Aceptar</button>
             </div>
           </div>
-          <div class="menu-options__description-block menu-options__description-block--hidden">
+          <div class="menu-options__description-block menu-options__description-block--hidden" id="description-opciones">
             <p>Puedes reiniciar el juego</p>
             <div class="menu-options__buttons">
-              <button class="menu-options__btn-cancel">Cancelar</button>
+              <button class="menu-options__btn-cancel" id="btn-cancel-options-step-2">Cancelar</button>
               <button class="menu-options__btn-acept">Reiniciar</button>
             </div>
           </div>

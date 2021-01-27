@@ -35,11 +35,11 @@ html(lang="en")
             .menu-options__modal
                 .menu-options__tabs
                     input#input-desafios(type="radio" name="radio-input-tabs").menu-options__input-tabs
-                    label(for="input-desafios").menu-options__tab Desafios
+                    label(for="input-desafios" name="type-option").menu-options__tab Desafios
                     input#input-opciones(type="radio" name="radio-input-tabs").menu-options__input-tabs
-                    label(for="input-opciones").menu-options__tab Opciones
+                    label(for="input-opciones" name="type-option").menu-options__tab Opciones
                 .menu-options__description-tabs
-                    .menu-options__description-block
+                    #description-desarios.menu-options__description-block
                         p Puedes elegir de de que forma jugar
                         ul.menu-options__description
                             li 
@@ -56,12 +56,12 @@ html(lang="en")
                                 label(for="10-vidas") Empezar con 10 vidas
                         p.menu-options__subtext Si haces algun cambio, el juego se reiniciara
                         .menu-options__buttons
-                            button.menu-options__btn-cancel Cancelar
+                            button#btn-cancel-options-step-1.menu-options__btn-cancel Cancelar 
                             button.menu-options__btn-acept Aceptar
-                    .menu-options__description-block.menu-options__description-block--hidden
+                    #description-opciones.menu-options__description-block.menu-options__description-block--hidden
                         p Puedes reiniciar el juego
                         .menu-options__buttons
-                            button.menu-options__btn-cancel Cancelar
+                            button#btn-cancel-options-step-2.menu-options__btn-cancel Cancelar
                             button.menu-options__btn-acept Reiniciar
 
 

@@ -32,6 +32,13 @@ const gameCompletedCancel = document.getElementById('game-completed-btn-cancel')
 const gameCompletedRestart = document.getElementById('game-completed-btn-newgame')
 const headerOptions = document.getElementById('header__options')
 const menuOpctions = document.getElementById('menu-options')
+const btnCancelOptionsStep1 = document.getElementById('btn-cancel-options-step-1')
+const btnCancelOptionsStep2 = document.getElementById('btn-cancel-options-step-2')
+const inputDesafios = document.getElementById('input-desafios') 
+const inputOpciones = document.getElementById('input-opciones') 
+const descriptionDesafios = document.getElementById('description-desarios')
+const descriptionOpciones = document.getElementById('description-opciones')
+const typeOptions = document.getElementsByName('type-option')
 
 /*
     ORDEN DE EJECUCION
@@ -227,6 +234,18 @@ const removeDarkFilter = () => {
     },3000)
 }
 
+const changeSteps = () => {
+    if (inputDesafios.cheched) {
+        descriptionDesafios.classList.remove('menu-options__description-block--hidden')
+        descriptionOpciones.classList.add('menu-options__description-block--hidden')
+    } else {        
+        descriptionDesafios.classList.add('menu-options__description-block--hidden')
+        descriptionOpciones.classList.remove('menu-options__description-block--hidden')
+    }
+}
+
+changeSteps()
+
 answerOptions.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
         if (e.target.textContent === currentAnswer) {
@@ -254,6 +273,16 @@ gameCompletedRestart.addEventListener('click', () => {
 //abre el modal de opciones
 headerOptions.addEventListener('click', () => {
     menuOpctions.classList.add('menu-options--show')
+})
+
+//cierra el modal de opciones en el step 1
+btnCancelOptionsStep1.addEventListener('click', () => {
+    menuOpctions.classList.remove('menu-options--show')
+})
+
+//cierra el modal de opciones en el step 1
+btnCancelOptionsStep2.addEventListener('click', () => {
+    menuOpctions.classList.remove('menu-options--show')
 })
 
 
