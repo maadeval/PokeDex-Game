@@ -129,6 +129,38 @@ bodypokedex-list { grid-column: 2/3; }
 
 :root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; }
 
+.choose-mode { position: fixed; left: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
+
+.choose-mode__modal { width: 600px; height: auto; background: var(--white); border-radius: 15px; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 2rem; }
+
+.choose-mode__title { text-align: center; color: var(--red); margin-top: 0; }
+
+.choose-mode__subtitle { text-align: center; }
+
+.choose-mode__input { display: none; }
+
+.choose-mode__input:checked + .choose-mode__option { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 lightcoral; background-color: lightcoral; }
+
+.choose-mode__options { display: grid; grid-template-columns: repeat(2, 1fr); -moz-column-gap: .5rem; column-gap: .5rem; row-gap: .5rem; margin-top: 1rem; justify-content: center; perspective: 1000px; }
+
+.choose-mode__option { min-width: 200px; text-align: center; border: 1px solid var(--red); padding: 1rem; cursor: pointer; border-radius: 15px; transform: rotateX(0deg) rotateY(10deg); box-shadow: -3px 3px 0 0px lightcoral; transition: transform .25s, box-shadow .25s; }
+
+.choose-mode__option:hover { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 lightcoral; }
+
+.choose-mode__btn-start { margin-top: 2rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
+
+.choose-mode__btn-start:hover { box-shadow: 0 0 0 4px lightcoral; background-color: var(--white); color: var(--red); }
+
+.choose-mode__btn-start:hover::before { background-color: var(--red); }
+
+.choose-mode__btn-start:hover::after { border: 4px solid var(--red); }
+
+.choose-mode__btn-start::before, .choose-mode__btn-start::after { content: ''; position: absolute; width: 40px; right: 0; }
+
+.choose-mode__btn-start::after { height: 40px; border-radius: 50%; top: 2px; border: 4px solid var(--white); }
+
+.choose-mode__btn-start::before { background-color: var(--white); height: 4px; top: 20px; }
+
 .header { background-color: var(--blue); width: 100vw; height: 60px; display: flex; align-items: center; }
 
 .header__options { position: absolute; left: 2rem; height: 30px; padding-bottom: 11px; border-radius: 15px 0; border: 1px solid var(--yellow); background-color: var(--red); padding-left: 1rem; padding-right: 1rem; outline: none; cursor: pointer; color: var(--white); letter-spacing: .25rem; }

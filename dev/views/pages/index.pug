@@ -64,7 +64,20 @@ html(lang="en")
                         .menu-options__buttons
                             button#btn-cancel-options-step-2.menu-options__btn-cancel Cancelar
                             button#btn-reiniciar.menu-options__btn-acept Reiniciar
-
+        #choose-mode.choose-mode
+            .choose-mode__modal
+                h2.choose-mode__title Bienvenido cazador pokemon!
+                p.choose-mode__subtitle Elige como quieres comenzar tu aventura
+                .choose-mode__options
+                    input#start-mode-game-1(type="radio", name="start-mode-game" checked).choose-mode__input
+                    label(for="start-mode-game-1").choose-mode__option Juego libre
+                    input#start-mode-game-2(type="radio", name="start-mode-game").choose-mode__input
+                    label(for="start-mode-game-2").choose-mode__option 3 vidas
+                    input#start-mode-game-3(type="radio", name="start-mode-game").choose-mode__input
+                    label(for="start-mode-game-3").choose-mode__option 5 vidas
+                    input#start-mode-game-4(type="radio", name="start-mode-game").choose-mode__input
+                    label(for="start-mode-game-4").choose-mode__option 10 vidas
+                button#choose-mode__btn-start.choose-mode__btn-start Comenzar!
 
 
            

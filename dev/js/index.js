@@ -62,7 +62,7 @@ const checkPokedex = () => {
         fillRemainingPokemons()
     } else {
         //sino, hacemos la peticion y la creamos
-        selectTypeGame()
+        chooseMode() //elige el tipo de juego que vas a usar
         fetch(ALL_POKEMON_INFO)
             .then(res => res.json())
             .then(data => {
@@ -80,8 +80,8 @@ const checkPokedex = () => {
     }
 }
 
-const selectTypeGame = () => {
-    headerOptions.click()
+const chooseMode = () => {
+    
 }
 
 const fillRemainingPokemons = () => {
