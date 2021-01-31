@@ -33,7 +33,7 @@ html(lang="en")
                     button.game-completed__btn-newgame#game-completed-btn-newgame Volver a jugar
         .menu-options#menu-options
             .menu-options__modal
-                .menu-options__tabs
+                #menu-options__tabs.menu-options__tabs
                     input#input-desafios(type="radio" name="radio-input-tabs").menu-options__input-tabs
                     label(for="input-desafios" name="type-option").menu-options__tab Desafios
                     input#input-opciones(type="radio" name="radio-input-tabs").menu-options__input-tabs
@@ -59,10 +59,11 @@ html(lang="en")
                             button#btn-cancel-options-step-1.menu-options__btn-cancel Cancelar 
                             button.menu-options__btn-acept Aceptar
                     #description-opciones.menu-options__description-block.menu-options__description-block--hidden
-                        p Puedes reiniciar el juego
+                        p Cansado de tu aventura pokemon? No te preocupes! Puedes reiniciar el juego aqui:
+                        span.menu-options__subtext Pero recuerda, perderas todos tus pokemons atrapados
                         .menu-options__buttons
                             button#btn-cancel-options-step-2.menu-options__btn-cancel Cancelar
-                            button.menu-options__btn-acept Reiniciar
+                            button#btn-reiniciar.menu-options__btn-acept Reiniciar
 
 
 

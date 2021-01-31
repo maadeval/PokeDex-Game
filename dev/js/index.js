@@ -39,6 +39,8 @@ const inputOpciones = document.getElementById('input-opciones')
 const descriptionDesafios = document.getElementById('description-desarios')
 const descriptionOpciones = document.getElementById('description-opciones')
 const typeOptions = document.getElementsByName('type-option')
+const menuOptionsTabs = document.getElementById('menu-options__tabs')
+const reiniciarButton = document.getElementById('btn-reiniciar')
 
 /*
     ORDEN DE EJECUCION
@@ -60,6 +62,7 @@ const checkPokedex = () => {
         fillRemainingPokemons()
     } else {
         //sino, hacemos la peticion y la creamos
+        selectTypeGame()
         fetch(ALL_POKEMON_INFO)
             .then(res => res.json())
             .then(data => {
@@ -75,6 +78,10 @@ const checkPokedex = () => {
                 fillRemainingPokemons()
             })
     }
+}
+
+const selectTypeGame = () => {
+    headerOptions.click()
 }
 
 const fillRemainingPokemons = () => {
@@ -235,16 +242,16 @@ const removeDarkFilter = () => {
 }
 
 const changeSteps = () => {
-    if (inputDesafios.cheched) {
+    if (inputDesafios.checked) {
+        console.log("esta en desafios")
         descriptionDesafios.classList.remove('menu-options__description-block--hidden')
         descriptionOpciones.classList.add('menu-options__description-block--hidden')
     } else {        
+        console.log("esta en opciones")
         descriptionDesafios.classList.add('menu-options__description-block--hidden')
         descriptionOpciones.classList.remove('menu-options__description-block--hidden')
     }
 }
-
-changeSteps()
 
 answerOptions.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
@@ -273,6 +280,13 @@ gameCompletedRestart.addEventListener('click', () => {
 //abre el modal de opciones
 headerOptions.addEventListener('click', () => {
     menuOpctions.classList.add('menu-options--show')
+    inputDesafios.checked = "true"
+    changeSteps()
+})
+
+//detecta si se cambio de pestana
+menuOptionsTabs.addEventListener('click', () => {
+    changeSteps()
 })
 
 //cierra el modal de opciones en el step 1
@@ -282,6 +296,13 @@ btnCancelOptionsStep1.addEventListener('click', () => {
 
 //cierra el modal de opciones en el step 1
 btnCancelOptionsStep2.addEventListener('click', () => {
+    menuOpctions.classList.remove('menu-options--show')
+})
+
+//se aplica cuando reinicias el juego desde la modal de opciones
+reiniciarButton.addEventListener('click', () => {
+    localStorage.removeItem('pokedex')
+    location.reload()
     menuOpctions.classList.remove('menu-options--show')
 })
 
