@@ -9,6 +9,10 @@
     height: 100vh;
     background: radial-gradient(rgba(0, 0, 0, 0.5), black);
 
+    &__hidden {
+        display: none;
+    }
+
     &__modal {
         width: 600px;
         height: auto;
@@ -69,7 +73,7 @@
     }
 
     &__btn-start {
-        margin-top: 2rem;
+        margin-top: 3rem;
         padding: .5rem 0;
         outline: none;
         border: 1px solid var(--red);

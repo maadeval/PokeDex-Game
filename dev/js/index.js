@@ -11,6 +11,8 @@ let remainingPokemons = []
 let listAnswers = []
 //vidas totales
 const lifeOptions = [3, 5, 10]
+//vidas elegidas para jugar
+let typeLife = -1
 
 //genera un numero random de 0 a 151
 const randomNumber = (max= 152) => Math.floor(Math.random() * max)
@@ -41,6 +43,8 @@ const descriptionOpciones = document.getElementById('description-opciones')
 const typeOptions = document.getElementsByName('type-option')
 const menuOptionsTabs = document.getElementById('menu-options__tabs')
 const reiniciarButton = document.getElementById('btn-reiniciar')
+const modalStartGame = document.getElementById('choose-mode')
+const buttonStartGame = document.getElementById('choose-mode__btn-start')
 
 /*
     ORDEN DE EJECUCION
@@ -253,6 +257,15 @@ const changeSteps = () => {
     }
 }
 
+//saca vidas en caso de equivocarse en la respuesta
+const subtractLives = () => {
+    typeLife --
+    //TODO dibujar el numero total de vidas que tenemos y que nos faltan
+    if (typeLife === 0) {
+        //TODO crear modal para avisar que el juego se termino
+    }
+}
+
 answerOptions.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
         if (e.target.textContent === currentAnswer) {
@@ -260,8 +273,23 @@ answerOptions.addEventListener('click', (e) => {
             catchPokemon()
         } else {
             //funciona en caso de que se quiera jugar con vidas
+            if (typeLife != -1) {
+                subtractLives()
+            }
         }
     }
+})
+
+//activa el juego cuando recien lo empezamos
+buttonStartGame.addEventListener('click', () => {
+    modalStartGame.classList.add('choose-mode__hidden');
+    const allStartOptions = document.getElementsByName('start-mode-game');
+    [...allStartOptions].map(option => {
+        if (option.checked) {
+            typeLife = option.defaultValue
+            console.log(typeLife)
+        }
+    })
 })
 
 //saca el modal cuando completas toda la pokedex

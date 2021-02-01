@@ -131,6 +131,8 @@ bodypokedex-list { grid-column: 2/3; }
 
 .choose-mode { position: fixed; left: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
 
+.choose-mode__hidden { display: none; }
+
 .choose-mode__modal { width: 600px; height: auto; background: var(--white); border-radius: 15px; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 2rem; }
 
 .choose-mode__title { text-align: center; color: var(--red); margin-top: 0; }
@@ -147,7 +149,7 @@ bodypokedex-list { grid-column: 2/3; }
 
 .choose-mode__option:hover { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 lightcoral; }
 
-.choose-mode__btn-start { margin-top: 2rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
+.choose-mode__btn-start { margin-top: 3rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
 
 .choose-mode__btn-start:hover { box-shadow: 0 0 0 4px lightcoral; background-color: var(--white); color: var(--red); }
 
