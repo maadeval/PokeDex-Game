@@ -45,6 +45,9 @@ const menuOptionsTabs = document.getElementById('menu-options__tabs')
 const reiniciarButton = document.getElementById('btn-reiniciar')
 const modalStartGame = document.getElementById('choose-mode')
 const buttonStartGame = document.getElementById('choose-mode__btn-start')
+const numberLife = document.getElementById('count-life__number')
+const modalGameOver = document.getElementById("game-over")
+const buttonRestartGame = document.getElementById('game-over__btn-restart')
 
 /*
     ORDEN DE EJECUCION
@@ -66,7 +69,7 @@ const checkPokedex = () => {
         fillRemainingPokemons()
     } else {
         //sino, hacemos la peticion y la creamos
-        chooseMode() //elige el tipo de juego que vas a usar
+        modalStartGame.classList.add('choose-mode__show'); //elige el tipo de juego que vas a usar
         fetch(ALL_POKEMON_INFO)
             .then(res => res.json())
             .then(data => {
@@ -82,10 +85,6 @@ const checkPokedex = () => {
                 fillRemainingPokemons()
             })
     }
-}
-
-const chooseMode = () => {
-    
 }
 
 const fillRemainingPokemons = () => {
@@ -260,12 +259,14 @@ const changeSteps = () => {
 //saca vidas en caso de equivocarse en la respuesta
 const subtractLives = () => {
     typeLife --
-    //TODO dibujar el numero total de vidas que tenemos y que nos faltan
+    numberLife.textContent = typeLife
     if (typeLife === 0) {
-        //TODO crear modal para avisar que el juego se termino
+        // crear modal para avisar que el juego se termino
+        modalGameOver.classList.add('game-over__show')
     }
 }
 
+//se ejecura cuando damos click a un pokemon de la lista
 answerOptions.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI') {
         if (e.target.textContent === currentAnswer) {
@@ -280,14 +281,22 @@ answerOptions.addEventListener('click', (e) => {
     }
 })
 
+//boton que aparece en el modal de game over, es para reiniciar el juego
+buttonRestartGame.addEventListener('click', () => {
+    localStorage.removeItem('pokedex')
+    location.reload()
+})
+
 //activa el juego cuando recien lo empezamos
 buttonStartGame.addEventListener('click', () => {
-    modalStartGame.classList.add('choose-mode__hidden');
+    modalStartGame.classList.remove('choose-mode__show');
     const allStartOptions = document.getElementsByName('start-mode-game');
     [...allStartOptions].map(option => {
-        if (option.checked) {
+        if (option.checked && option.defaultValue != -1) {
             typeLife = option.defaultValue
-            console.log(typeLife)
+            numberLife.textContent = typeLife
+        } else if (option.defaultValue == -1) {
+            numberLife.textContent = "inf."
         }
     })
 })

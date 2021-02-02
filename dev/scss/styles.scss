@@ -9,6 +9,7 @@
 
 //blocks
 @import "blocks/start-mode-game.scss";
+@import "blocks/count-life.scss";
 @import "blocks/header.scss";
 @import "blocks/poke-select.scss";
 @import "blocks/loader.scss";
@@ -16,6 +17,7 @@
 @import "blocks/game-completed.scss";
 @import "blocks/congratulation-message.scss";
 @import "blocks/menu-options.scss";
+@import "blocks/game-over.scss";
 
 //helpers
 @import "helpers/helpers";

@@ -129,9 +129,9 @@ bodypokedex-list { grid-column: 2/3; }
 
 :root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; }
 
-.choose-mode { position: fixed; left: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
+.choose-mode { position: fixed; left: 0; top: 0; display: none; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
 
-.choose-mode__hidden { display: none; }
+.choose-mode__show { display: flex; }
 
 .choose-mode__modal { width: 600px; height: auto; background: var(--white); border-radius: 15px; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 2rem; }
 
@@ -162,6 +162,12 @@ bodypokedex-list { grid-column: 2/3; }
 .choose-mode__btn-start::after { height: 40px; border-radius: 50%; top: 2px; border: 4px solid var(--white); }
 
 .choose-mode__btn-start::before { background-color: var(--white); height: 4px; top: 20px; }
+
+.count-life { position: fixed; display: block; width: 50px; height: 50px; background-color: red; border: 4px solid var(--red); right: 50px; bottom: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+.count-life__title { position: absolute; top: calc(-100% - 10px); transform: rotate(-5deg); -webkit-text-stroke: 1px var(--red); text-shadow: -3px 3px 5px black; color: white; }
+
+.count-life__number { width: 100%; height: 100%; border-radius: 50%; background-color: white; display: flex; justify-content: center; align-items: center; font-size: 18px; }
 
 .header { background-color: var(--blue); width: 100vw; height: 60px; display: flex; align-items: center; }
 
@@ -298,5 +304,29 @@ bodypokedex-list { grid-column: 2/3; }
 .menu-options__btn-cancel { background-color: var(--red); }
 
 .menu-options__btn-acept { background-color: var(--blue); }
+
+.game-over { position: fixed; left: 0; top: 0; display: none; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
+
+.game-over__show { display: flex; }
+
+.game-over__modal { width: 600px; height: auto; background: var(--white); border-radius: 15px; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 2rem; }
+
+.game-over__title { text-align: center; color: var(--red); margin-top: 0; font-size: 24px; margin-bottom: 2rem; }
+
+.game-over__text { text-align: center; }
+
+.game-over__btn-restart { margin-top: 3rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
+
+.game-over__btn-restart:hover { box-shadow: 0 0 0 4px lightcoral; background-color: var(--white); color: var(--red); }
+
+.game-over__btn-restart:hover::before { background-color: var(--red); }
+
+.game-over__btn-restart:hover::after { border: 4px solid var(--red); }
+
+.game-over__btn-restart::before, .game-over__btn-restart::after { content: ''; position: absolute; width: 40px; right: 0; }
+
+.game-over__btn-restart::after { height: 40px; border-radius: 50%; top: 2px; border: 4px solid var(--white); }
+
+.game-over__btn-restart::before { background-color: var(--white); height: 4px; top: 20px; }
 
 .hiden { display: none; }
