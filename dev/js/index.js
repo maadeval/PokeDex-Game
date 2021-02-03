@@ -12,7 +12,7 @@ let listAnswers = []
 //vidas totales
 const lifeOptions = [3, 5, 10]
 //vidas elegidas para jugar
-let typeLife = -1
+let typeLife = JSON.parse(localStorage.getItem("numLife"))
 
 //genera un numero random de 0 a 151
 const randomNumber = (max= 152) => Math.floor(Math.random() * max)
@@ -48,6 +48,7 @@ const buttonStartGame = document.getElementById('choose-mode__btn-start')
 const numberLife = document.getElementById('count-life__number')
 const modalGameOver = document.getElementById("game-over")
 const buttonRestartGame = document.getElementById('game-over__btn-restart')
+const modalNumLife = document.getElementById('count-life')
 
 /*
     ORDEN DE EJECUCION
@@ -67,6 +68,11 @@ const checkPokedex = () => {
         pokedex = JSON.parse(localStorage.getItem('pokedex'))
         allPokemons = pokedex.map(pokemon => pokemon.name)
         fillRemainingPokemons()
+        if (JSON.parse(localStorage.getItem("numLife")) != null) {
+            numberLife.textContent = JSON.parse(localStorage.getItem("numLife"))
+        } else {
+            numberLife.textContent = "inf."
+        }
     } else {
         //sino, hacemos la peticion y la creamos
         modalStartGame.classList.add('choose-mode__show'); //elige el tipo de juego que vas a usar
@@ -246,11 +252,9 @@ const removeDarkFilter = () => {
 
 const changeSteps = () => {
     if (inputDesafios.checked) {
-        console.log("esta en desafios")
         descriptionDesafios.classList.remove('menu-options__description-block--hidden')
         descriptionOpciones.classList.add('menu-options__description-block--hidden')
     } else {        
-        console.log("esta en opciones")
         descriptionDesafios.classList.add('menu-options__description-block--hidden')
         descriptionOpciones.classList.remove('menu-options__description-block--hidden')
     }
@@ -260,6 +264,7 @@ const changeSteps = () => {
 const subtractLives = () => {
     typeLife --
     numberLife.textContent = typeLife
+    localStorage.setItem("numLife", JSON.stringify(typeLife))
     if (typeLife === 0) {
         // crear modal para avisar que el juego se termino
         modalGameOver.classList.add('game-over__show')
@@ -274,7 +279,7 @@ answerOptions.addEventListener('click', (e) => {
             catchPokemon()
         } else {
             //funciona en caso de que se quiera jugar con vidas
-            if (typeLife != -1) {
+            if (JSON.parse(localStorage.getItem("numLife")) != -1 && JSON.parse(localStorage.getItem("numLife")) != null) {
                 subtractLives()
             }
         }
@@ -284,6 +289,7 @@ answerOptions.addEventListener('click', (e) => {
 //boton que aparece en el modal de game over, es para reiniciar el juego
 buttonRestartGame.addEventListener('click', () => {
     localStorage.removeItem('pokedex')
+    localStorage.removeItem("numLife")
     location.reload()
 })
 
@@ -294,6 +300,7 @@ buttonStartGame.addEventListener('click', () => {
     [...allStartOptions].map(option => {
         if (option.checked && option.defaultValue != -1) {
             typeLife = option.defaultValue
+            localStorage.setItem("numLife", typeLife)
             numberLife.textContent = typeLife
         } else if (option.defaultValue == -1) {
             numberLife.textContent = "inf."
@@ -310,6 +317,7 @@ gameCompletedCancel.addEventListener('click', () => {
 gameCompletedRestart.addEventListener('click', () => {
     modalGameCompleted.classList.remove('game-completed__show')
     localStorage.removeItem('pokedex')
+    localStorage.removeItem("numLife")
     pokeSelect.textContent = ''
     checkPokedex()
 })
@@ -339,9 +347,9 @@ btnCancelOptionsStep2.addEventListener('click', () => {
 //se aplica cuando reinicias el juego desde la modal de opciones
 reiniciarButton.addEventListener('click', () => {
     localStorage.removeItem('pokedex')
+    localStorage.removeItem("numLife")
     location.reload()
     menuOpctions.classList.remove('menu-options--show')
 })
-
 
 checkPokedex()

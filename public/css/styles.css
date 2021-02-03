@@ -129,7 +129,7 @@ bodypokedex-list { grid-column: 2/3; }
 
 :root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; }
 
-.choose-mode { position: fixed; left: 0; top: 0; display: none; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); }
+.choose-mode { position: fixed; left: 0; top: 0; display: none; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); z-index: 80; }
 
 .choose-mode__show { display: flex; }
 
@@ -164,6 +164,8 @@ bodypokedex-list { grid-column: 2/3; }
 .choose-mode__btn-start::before { background-color: var(--white); height: 4px; top: 20px; }
 
 .count-life { position: fixed; display: block; width: 50px; height: 50px; background-color: red; border: 4px solid var(--red); right: 50px; bottom: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+.count-life--hide { display: none; }
 
 .count-life__title { position: absolute; top: calc(-100% - 10px); transform: rotate(-5deg); -webkit-text-stroke: 1px var(--red); text-shadow: -3px 3px 5px black; color: white; }
 

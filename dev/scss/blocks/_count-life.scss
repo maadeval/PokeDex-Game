@@ -12,6 +12,10 @@
     justify-content: center;
     border-radius: 50%;
 
+    &--hide {
+        display: none;
+    }
+
     &__title {
         position: absolute;
         top: calc(-100% - 10px);

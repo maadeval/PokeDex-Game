@@ -8,6 +8,7 @@
     width: 100vw;
     height: 100vh;
     background: radial-gradient(rgba(0, 0, 0, 0.5), black);
+    z-index: 80;
 
     &__show {
         display: flex;
