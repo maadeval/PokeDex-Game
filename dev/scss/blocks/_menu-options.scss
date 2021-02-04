@@ -64,46 +64,6 @@
         ;
     }
 
-    &__description {
-        list-style: none;
-
-        & li {
-            margin: 1.5rem 0;
-        }
-    }
-
-    &__radio {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border: 1px solid lightgray;
-            background-color: white;
-            position: absolute;
-        }
-
-        &:checked::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 15px;
-            height: 10px;
-            border-left: 5px solid var(--red);
-            border-bottom: 5px solid var(--red);
-            border-bottom: 5px solid var(--red);
-            transform: rotate(-45deg);
-            left: 2px;
-            bottom: 5px;
-        } 
-    }
-
     &__subtext {
         font-size: 12px;
         color: gray;

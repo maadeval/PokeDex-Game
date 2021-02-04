@@ -40,24 +40,23 @@ html(lang="en")
                     label(for="input-opciones" name="type-option").menu-options__tab Opciones
                 .menu-options__description-tabs
                     #description-desarios.menu-options__description-block
-                        p Puedes elegir de de que forma jugar
-                        ul.menu-options__description
-                            li 
-                                input.menu-options__radio#juego-libre(type="radio" name="type-game")
-                                label(for="juego-libre") Juego libre
-                            li 
-                                input.menu-options__radio#3-vidas(type="radio" name="type-game")
-                                label(for="3-vidas") Empezar con 3 vidas
-                            li
-                                input.menu-options__radio#5-vidas(type="radio" name="type-game")
-                                label(for="5-vidas") Empezar con 5 vidas
-                            li
-                                input.menu-options__radio#10-vidas(type="radio" name="type-game")
-                                label(for="10-vidas") Empezar con 10 vidas
-                        p.menu-options__subtext Si haces algun cambio, el juego se reiniciara
+                        p Puedes cambiar el color de pokedex
+                        #background-modes.choose-mode__options
+                            input#background-1(type="radio", name="background-mode" value="1").choose-mode__input
+                            label(for="background-1").choose-mode__option Original
+                            input#background-2(type="radio", name="background-mode" value="2").choose-mode__input
+                            label(for="background-2").choose-mode__option Fantasma
+                            input#background-3(type="radio", name="background-mode" value="3").choose-mode__input
+                            label(for="background-3").choose-mode__option Electrico
+                            input#background-4(type="radio", name="background-mode" value="4").choose-mode__input
+                            label(for="background-4").choose-mode__option Bola de fuego
+                            input#background-5(type="radio", name="background-mode" value="5").choose-mode__input
+                            label(for="background-5").choose-mode__option Natura
+                            input#background-6(type="radio", name="background-mode" value="6").choose-mode__input
+                            label(for="background-6").choose-mode__option Artico
                         .menu-options__buttons
                             button#btn-cancel-options-step-1.menu-options__btn-cancel Cancelar 
-                            button.menu-options__btn-acept Aceptar
+                            button#btn-acept-options-step-1.menu-options__btn-acept Aceptar
                     #description-opciones.menu-options__description-block.menu-options__description-block--hidden
                         p Cansado de tu aventura pokemon? No te preocupes! Puedes reiniciar el juego aqui:
                         span.menu-options__subtext Pero recuerda, perderas todos tus pokemons atrapados

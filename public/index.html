@@ -44,29 +44,24 @@
         </div>
         <div class="menu-options__description-tabs">
           <div class="menu-options__description-block" id="description-desarios">
-            <p>Puedes elegir de de que forma jugar</p>
-            <ul class="menu-options__description">
-              <li> 
-                <input class="menu-options__radio" id="juego-libre" type="radio" name="type-game"/>
-                <label for="juego-libre">Juego libre</label>
-              </li>
-              <li> 
-                <input class="menu-options__radio" id="3-vidas" type="radio" name="type-game"/>
-                <label for="3-vidas">Empezar con 3 vidas</label>
-              </li>
-              <li>
-                <input class="menu-options__radio" id="5-vidas" type="radio" name="type-game"/>
-                <label for="5-vidas">Empezar con 5 vidas</label>
-              </li>
-              <li>
-                <input class="menu-options__radio" id="10-vidas" type="radio" name="type-game"/>
-                <label for="10-vidas">Empezar con 10 vidas</label>
-              </li>
-            </ul>
-            <p class="menu-options__subtext">Si haces algun cambio, el juego se reiniciara</p>
+            <p>Puedes cambiar el color de pokedex</p>
+            <div class="choose-mode__options" id="background-modes">
+              <input class="choose-mode__input" id="background-1" type="radio" name="background-mode" value="1"/>
+              <label class="choose-mode__option" for="background-1">Original</label>
+              <input class="choose-mode__input" id="background-2" type="radio" name="background-mode" value="2"/>
+              <label class="choose-mode__option" for="background-2">Fantasma</label>
+              <input class="choose-mode__input" id="background-3" type="radio" name="background-mode" value="3"/>
+              <label class="choose-mode__option" for="background-3">Electrico</label>
+              <input class="choose-mode__input" id="background-4" type="radio" name="background-mode" value="4"/>
+              <label class="choose-mode__option" for="background-4">Bola de fuego</label>
+              <input class="choose-mode__input" id="background-5" type="radio" name="background-mode" value="5"/>
+              <label class="choose-mode__option" for="background-5">Natura</label>
+              <input class="choose-mode__input" id="background-6" type="radio" name="background-mode" value="6"/>
+              <label class="choose-mode__option" for="background-6">Artico</label>
+            </div>
             <div class="menu-options__buttons">
               <button class="menu-options__btn-cancel" id="btn-cancel-options-step-1">Cancelar </button>
-              <button class="menu-options__btn-acept">Aceptar</button>
+              <button class="menu-options__btn-acept" id="btn-acept-options-step-1">Aceptar</button>
             </div>
           </div>
           <div class="menu-options__description-block menu-options__description-block--hidden" id="description-opciones">

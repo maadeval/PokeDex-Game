@@ -49,6 +49,9 @@ const numberLife = document.getElementById('count-life__number')
 const modalGameOver = document.getElementById("game-over")
 const buttonRestartGame = document.getElementById('game-over__btn-restart')
 const modalNumLife = document.getElementById('count-life')
+const backgroundModes = document.getElementById('background-modes')
+const listBackgroundModes = document.getElementsByName('background-mode')
+const aceptButtonOptionStep1 = document.getElementById('btn-acept-options-step-1')
 
 /*
     ORDEN DE EJECUCION
@@ -63,6 +66,15 @@ const modalNumLife = document.getElementById('count-life')
 */
 
 const checkPokedex = () => {
+    //si tenemos un theme en el local storage, lo usamos
+    if (localStorage.getItem("theme") != null) {
+        const styles = document.documentElement.style
+        const localTheme = JSON.parse(localStorage.getItem("theme"))
+        const nameStyles = Object.keys(localTheme)
+        nameStyles.forEach(style => {
+            styles.setProperty(style, localTheme[style])
+        })
+    }
     //si ya tenemos pokedex la usamos
     if (localStorage.getItem('pokedex')) {
         pokedex = JSON.parse(localStorage.getItem('pokedex'))
@@ -286,6 +298,100 @@ answerOptions.addEventListener('click', (e) => {
     }
 })
 
+const themeOriginal = {
+    '--blue': '#0063b1',
+    '--yellow': '#ffcb00',
+    '--darkGrey': '#333',
+    '--white': '#f7f7f7',
+    '--red': '#e80125',
+    '--light-red': '#f08080'
+}
+
+const themeGhost = {
+    '--blue': '#464646',
+    '--yellow': '#949494',
+    '--darkGrey': '#000000',
+    '--white': '#f7f7f7',
+    '--red': '#2D2D2D',
+    '--light-red': '#949494'
+}
+
+const themeElectric = {
+    '--blue': '#FFD726',
+    '--yellow': '#000',
+    '--darkGrey': '#A9A07A',
+    '--white': '#fff',
+    '--red': '#FFB400',
+    '--light-red': '#A9A07A'
+}
+
+const themeFireBall = {
+    '--blue': '#FF0000',
+    '--yellow': '#ffcb00',
+    '--darkGrey': '#808080',
+    '--white': '#fff',
+    '--red': '#800000',
+    '--light-red': '#FF0000'
+}
+
+const themeNatura = {
+    '--blue': '#148E43',
+    '--yellow': '#0D250F',
+    '--darkGrey': '#40634E',
+    '--white': '#f7f7f7',
+    '--red': '#8BB1B4',
+    '--light-red': '#148E43'
+}
+
+const themeArtico = {
+    '--blue': '#00B0BD',
+    '--yellow': '#E8FDFF',
+    '--darkGrey': '#093D1D',
+    '--white': '#f7f7f7',
+    '--red': '#093D1D',
+    '--light-red': '#00B0BD'
+}
+
+//cambia el estilo global
+const changeTheme = (theme, id) => {
+    const styles = document.documentElement.style
+    const nameProperties = Object.keys(theme)
+    for (const style of nameProperties) {
+        styles.setProperty(style, theme[style])
+    }
+    localStorage.setItem("theme", JSON.stringify(theme))
+}
+
+//detecta cuando cambiamos de background
+backgroundModes.addEventListener("click", (e) => {
+    //valor del name de los imputs
+    const nameValue = listBackgroundModes[0].name
+    if (e.target.name === nameValue) {
+        switch (Number(e.target.value)) {
+            case 1:
+                changeTheme(themeOriginal, 0)
+                break;
+            case 2:
+                changeTheme(themeGhost, 1)
+                break;
+            case 3:
+                changeTheme(themeElectric, 2)
+                break;
+            case 4:
+                changeTheme(themeFireBall, 3)
+                break;
+            case 5:
+                changeTheme(themeNatura, 4)
+                break;
+            case 6:
+                changeTheme(themeArtico, 5)
+                break;
+            default:
+                break;
+        }
+    }
+})
+
 //boton que aparece en el modal de game over, es para reiniciar el juego
 buttonRestartGame.addEventListener('click', () => {
     localStorage.removeItem('pokedex')
@@ -336,6 +442,11 @@ menuOptionsTabs.addEventListener('click', () => {
 
 //cierra el modal de opciones en el step 1
 btnCancelOptionsStep1.addEventListener('click', () => {
+    menuOpctions.classList.remove('menu-options--show')
+})
+
+//cierra el modal de opciones en el step 1
+aceptButtonOptionStep1.addEventListener("click", () => {
     menuOpctions.classList.remove('menu-options--show')
 })
 

@@ -127,7 +127,7 @@ bodypokedex-list { grid-column: 2/3; }
 
 ::-webkit-scrollbar-thumb { border-radius: 15px; background-color: var(--yellow); }
 
-:root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; }
+:root { --blue: #0063b1; --yellow: #ffcb00; --darkGrey: #333; --white: #f7f7f7; --red: #e80125; --light-red: #f08080; }
 
 .choose-mode { position: fixed; left: 0; top: 0; display: none; align-items: center; justify-content: center; width: 100vw; height: 100vh; background: radial-gradient(rgba(0, 0, 0, 0.5), black); z-index: 80; }
 
@@ -141,17 +141,17 @@ bodypokedex-list { grid-column: 2/3; }
 
 .choose-mode__input { display: none; }
 
-.choose-mode__input:checked + .choose-mode__option { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 lightcoral; background-color: lightcoral; }
+.choose-mode__input:checked + .choose-mode__option { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 var(--light-red); background-color: var(--light-red); }
 
 .choose-mode__options { display: grid; grid-template-columns: repeat(2, 1fr); -moz-column-gap: .5rem; column-gap: .5rem; row-gap: .5rem; margin-top: 1rem; justify-content: center; perspective: 1000px; }
 
-.choose-mode__option { min-width: 200px; text-align: center; border: 1px solid var(--red); padding: 1rem; cursor: pointer; border-radius: 15px; transform: rotateX(0deg) rotateY(10deg); box-shadow: -3px 3px 0 0px lightcoral; transition: transform .25s, box-shadow .25s; }
+.choose-mode__option { min-width: 200px; text-align: center; border: 1px solid var(--red); padding: 1rem; cursor: pointer; border-radius: 15px; transform: rotateX(0deg) rotateY(10deg); box-shadow: -3px 3px 0 0px var(--light-red); transition: transform .25s, box-shadow .25s; }
 
-.choose-mode__option:hover { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 lightcoral; }
+.choose-mode__option:hover { transform: rotateX(0deg) rotateY(0deg); box-shadow: 0 1px 0 0 var(--light-red); }
 
 .choose-mode__btn-start { margin-top: 3rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
 
-.choose-mode__btn-start:hover { box-shadow: 0 0 0 4px lightcoral; background-color: var(--white); color: var(--red); }
+.choose-mode__btn-start:hover { box-shadow: 0 0 0 4px var(--light-red); background-color: var(--white); color: var(--red); }
 
 .choose-mode__btn-start:hover::before { background-color: var(--red); }
 
@@ -285,16 +285,6 @@ bodypokedex-list { grid-column: 2/3; }
 
 .menu-options__description-tabs { padding: 1rem; position: relative; }
 
-.menu-options__description { list-style: none; }
-
-.menu-options__description li { margin: 1.5rem 0; }
-
-.menu-options__radio { position: relative; display: inline-flex; align-items: center; justify-content: center; }
-
-.menu-options__radio::before { content: ''; display: block; position: absolute; width: 15px; height: 15px; border: 1px solid lightgray; background-color: white; position: absolute; }
-
-.menu-options__radio:checked::after { content: ''; display: block; position: absolute; width: 15px; height: 10px; border-left: 5px solid var(--red); border-bottom: 5px solid var(--red); border-bottom: 5px solid var(--red); transform: rotate(-45deg); left: 2px; bottom: 5px; }
-
 .menu-options__subtext { font-size: 12px; color: gray; text-align: center; }
 
 .menu-options__buttons { display: flex; justify-content: space-evenly; margin-top: 2rem; }
@@ -319,7 +309,7 @@ bodypokedex-list { grid-column: 2/3; }
 
 .game-over__btn-restart { margin-top: 3rem; padding: .5rem 0; outline: none; border: 1px solid var(--red); border-radius: 5px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--red); color: var(--white); transition: box-shadow .25s; }
 
-.game-over__btn-restart:hover { box-shadow: 0 0 0 4px lightcoral; background-color: var(--white); color: var(--red); }
+.game-over__btn-restart:hover { box-shadow: 0 0 0 4px var(--light-red); background-color: var(--white); color: var(--red); }
 
 .game-over__btn-restart:hover::before { background-color: var(--red); }
 
