@@ -7,3 +7,5 @@ Tecnologías utilizadas
 - Sass
 - Javascript (Vanilla)
 - API de PokeAPI (https://pokeapi.co/)
+
+![index](https://user-images.githubusercontent.com/55862658/106984435-5bc5e680-6746-11eb-870c-255e2aa67f03.PNG)
