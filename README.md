@@ -1,6 +1,8 @@
 # PokeDex-Game
  Adivina que pokemon es segun el contorno de la imagen. Similar al juego que se mostraba al comienzo y final de cada capitulo.
  Proyecto inspirado en Dorian Designs (https://www.youtube.com/user/DorianDesigns), con extensiones personales.
+ 
+ Link del sitio: https://mateoac12.github.io/PokeDex-Game/index.html
 
 Tecnologías utilizadas
 - Pug (como motor de plantilla HTML)
