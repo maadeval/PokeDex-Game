@@ -111,7 +111,7 @@ template { display: none; }
 /** Add the correct display in IE 10. */
 [hidden] { display: none; }
 
-@font-face { font-family: "pokemon-solid"; src: url("/assets/fonts/Pokemon-Solid.ttf"); }
+@font-face { font-family: "pokemon-solid"; src: url("/assets/fonts/Pokemon-Solid.ttf") format("truetype"); }
 
 body { background-color: var(--darkGrey); font-family: "pokemon-solid", sans-serif; letter-spacing: .25rem; overflow: hidden; display: grid; grid-template-rows: auto 1fr; grid-template-columns: 400px 1fr; }
 
